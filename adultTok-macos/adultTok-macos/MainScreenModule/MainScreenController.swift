@@ -18,8 +18,10 @@ final class MainScreenController: NSViewController {
         webView.navigationDelegate = self
         webView.uiDelegate = self
         configureView()
-        if let url = AppPersistentVariables.baseUrl {
-            webView.load(URLRequest(url: url))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            if let url = AppPersistentVariables.baseUrl {
+                self.webView.load(URLRequest(url: url))
+            }
         }
     }
 
