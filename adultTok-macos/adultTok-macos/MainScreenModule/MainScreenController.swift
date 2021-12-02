@@ -9,7 +9,7 @@ import Cocoa
 import WebKit
 
 final class MainScreenController: NSViewController {
-    @IBOutlet private weak var controlView: NSView!
+    @IBOutlet private weak var boxView: NSBox!
     @IBOutlet private weak var webView: WKWebView!
 
     override func viewDidLoad() {
@@ -17,14 +17,14 @@ final class MainScreenController: NSViewController {
 
         webView.navigationDelegate = self
         webView.uiDelegate = self
-    }
-
-    override func viewWillAppear() {
-        super.viewWillAppear()
-
+        configureView()
         if let url = AppPersistentVariables.baseUrl {
             webView.load(URLRequest(url: url))
         }
+    }
+
+    func configureView() {
+        boxView.fillColor = .yellow
     }
 }
 

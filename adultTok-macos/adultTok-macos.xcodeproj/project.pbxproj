@@ -32,6 +32,7 @@
 		046102D82758D49E00B4D0C8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		046102DB2758D58D00B4D0C8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		046102DE2758D9B100B4D0C8 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		046102E02758FB9C00B4D0C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 		046102BA2758CC8100B4D0C8 /* adultTok-macos */ = {
 			isa = PBXGroup;
 			children = (
+				046102E02758FB9C00B4D0C8 /* Info.plist */,
 				046102C22758CC8200B4D0C8 /* adultTok_macos.entitlements */,
 				046102D02758D28000B4D0C8 /* Utils */,
 				046102C82758CD1A00B4D0C8 /* BaseObjects */,
@@ -365,6 +367,7 @@
 				DEVELOPMENT_TEAM = XKX3GF5DM3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "adultTok-macos/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -392,6 +395,7 @@
 				DEVELOPMENT_TEAM = XKX3GF5DM3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "adultTok-macos/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

@@ -12,8 +12,8 @@ public class NavigationController: NSViewController {
     public var viewControllers: [NSViewController] = []
 
     open override func loadView() {
-        view = NSView()
-        view.wantsLayer = true
+        self.view = NSView()
+        self.view.wantsLayer = true
     }
 
     public init(rootViewController: NSViewController) {

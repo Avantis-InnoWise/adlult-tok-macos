@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "45FB39A5-8A52-4EB7-9A7D-985DCF057C9F"
-            shouldBeEnabled = "Yes"
+            uuid = "D182AEFC-06DF-4E47-989D-1E180724F6D2"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "adultTok-macos/BaseObjects/RootRouter.swift"
+            filePath = "adultTok-macos/BaseObjects/BaseClasses/NavigationController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "openMainScreen()"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "pushViewController(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

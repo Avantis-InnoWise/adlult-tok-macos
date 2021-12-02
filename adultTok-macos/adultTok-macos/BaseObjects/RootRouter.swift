@@ -7,35 +7,21 @@
 
 import Cocoa
 
-public protocol RouterDelegate: AnyObject {
-    func update(with controller: NSViewController?)
-}
-
 public final class RootRouter: Router {
     public var controlledViewController: NSViewController? {
         return rootViewController
     }
 
-    private(set) var rootViewController: NSViewController? {
-        didSet {
-            delegate?.update(with: rootViewController)
-        }
-    }
-
-    weak var delegate: RouterDelegate?
+    public var rootViewController: NSViewController?
 
     public init() {
-        self.openMainScreen()
+        self.rootViewController = openMainScreen()
     }
 }
 
 extension RootRouter {
-    func openMainScreen() {
-        let controller = MainScreenController.loadFromNib()
-        let navigationController = NavigationController(rootViewController: controller)
-        navigationController.view.layer?.backgroundColor = .clear
-        navigationController.viewControllers = [controller]
-        rootViewController = navigationController
+    func openMainScreen() -> NSViewController {
+        return MainScreenController.loadFromNib()
     }
 }
 

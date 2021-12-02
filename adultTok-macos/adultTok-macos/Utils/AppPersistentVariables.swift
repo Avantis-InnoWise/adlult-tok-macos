@@ -9,6 +9,6 @@ import Foundation
 
 struct AppPersistentVariables {
     public static var baseUrl: URL? {
-        return URL(string: "https://wellhello.com/site/user/home?chatOpened=1")
+        return URL(string: "http://www.google.com") // https://wellhello.com/site/user/home?chatOpened=1
     }
 }

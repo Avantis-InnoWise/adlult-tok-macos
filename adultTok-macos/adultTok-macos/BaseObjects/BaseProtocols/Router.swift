@@ -19,17 +19,17 @@ public extension Router where Self: Navigator {
 }
 
 public protocol Navigator {
-    var rootViewController: NSViewController { get }
+    var rootViewController: NSViewController? { get }
     var initialViewControllers: [NSViewController] { get }
     var navigationController: NavigationController? { get }
 }
 
 public extension Navigator {
     var navigationController: NavigationController? {
-        return rootViewController.navigationController
+        return rootViewController?.navigationController
     }
 
     var initialViewControllers: [NSViewController] {
-        return [rootViewController]
+        return [rootViewController ?? NSViewController()]
     }
 }

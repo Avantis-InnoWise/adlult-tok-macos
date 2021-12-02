@@ -9,7 +9,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainScreenController" customModule="adultTok_macos" customModuleProvider="target">
             <connections>
-                <outlet property="controlView" destination="377-Y8-ah2" id="uAA-aV-CXp"/>
+                <outlet property="boxView" destination="oMx-7p-cFZ" id="HWL-4g-eFY"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="webView" destination="ILd-l3-91g" id="EbI-s8-UCz"/>
             </connections>
@@ -21,28 +21,32 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILd-l3-91g">
-                    <rect key="frame" x="0.0" y="0.0" width="836" height="444"/>
+                    <rect key="frame" x="0.0" y="0.0" width="836" height="544"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
-                <customView appearanceType="darkAqua" translatesAutoresizingMaskIntoConstraints="NO" id="377-Y8-ah2">
-                    <rect key="frame" x="0.0" y="444" width="836" height="200"/>
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="oMx-7p-cFZ">
+                    <rect key="frame" x="0.0" y="544" width="836" height="100"/>
+                    <view key="contentView" id="I6v-en-2ZI">
+                        <rect key="frame" x="1" y="1" width="834" height="98"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="TCg-Rj-kz6"/>
+                        <constraint firstAttribute="height" constant="100" id="qDV-X5-kyF"/>
                     </constraints>
-                </customView>
+                </box>
             </subviews>
             <constraints>
-                <constraint firstItem="377-Y8-ah2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="15Z-dq-LK8"/>
+                <constraint firstItem="ILd-l3-91g" firstAttribute="top" secondItem="oMx-7p-cFZ" secondAttribute="bottom" id="3O3-NE-xvb"/>
                 <constraint firstAttribute="bottom" secondItem="ILd-l3-91g" secondAttribute="bottom" id="ENG-sH-e0l"/>
-                <constraint firstItem="377-Y8-ah2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="FPI-FK-3lA"/>
+                <constraint firstItem="oMx-7p-cFZ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Lq0-ep-ZnG"/>
                 <constraint firstAttribute="trailing" secondItem="ILd-l3-91g" secondAttribute="trailing" id="P85-U4-bzK"/>
                 <constraint firstItem="ILd-l3-91g" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="QAN-Mc-bcc"/>
-                <constraint firstAttribute="trailing" secondItem="377-Y8-ah2" secondAttribute="trailing" id="cRh-t6-l9g"/>
-                <constraint firstItem="ILd-l3-91g" firstAttribute="top" secondItem="377-Y8-ah2" secondAttribute="bottom" id="h5Z-9E-JlJ"/>
+                <constraint firstAttribute="trailing" secondItem="oMx-7p-cFZ" secondAttribute="trailing" id="YjF-in-a5m"/>
                 <constraint firstItem="ILd-l3-91g" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="ldv-5e-sy2"/>
+                <constraint firstItem="oMx-7p-cFZ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="qbT-Ur-cXZ"/>
             </constraints>
             <point key="canvasLocation" x="168" y="340"/>
         </customView>
