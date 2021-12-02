@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="19162"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainScreenController" customModule="adultTok_macos" customModuleProvider="target">
+            <connections>
+                <outlet property="controlView" destination="377-Y8-ah2" id="uAA-aV-CXp"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="webView" destination="ILd-l3-91g" id="EbI-s8-UCz"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="836" height="644"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILd-l3-91g">
+                    <rect key="frame" x="0.0" y="0.0" width="836" height="444"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <customView appearanceType="darkAqua" translatesAutoresizingMaskIntoConstraints="NO" id="377-Y8-ah2">
+                    <rect key="frame" x="0.0" y="444" width="836" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="TCg-Rj-kz6"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="377-Y8-ah2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="15Z-dq-LK8"/>
+                <constraint firstAttribute="bottom" secondItem="ILd-l3-91g" secondAttribute="bottom" id="ENG-sH-e0l"/>
+                <constraint firstItem="377-Y8-ah2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="FPI-FK-3lA"/>
+                <constraint firstAttribute="trailing" secondItem="ILd-l3-91g" secondAttribute="trailing" id="P85-U4-bzK"/>
+                <constraint firstItem="ILd-l3-91g" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="QAN-Mc-bcc"/>
+                <constraint firstAttribute="trailing" secondItem="377-Y8-ah2" secondAttribute="trailing" id="cRh-t6-l9g"/>
+                <constraint firstItem="ILd-l3-91g" firstAttribute="top" secondItem="377-Y8-ah2" secondAttribute="bottom" id="h5Z-9E-JlJ"/>
+                <constraint firstItem="ILd-l3-91g" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="ldv-5e-sy2"/>
+            </constraints>
+            <point key="canvasLocation" x="168" y="340"/>
+        </customView>
+    </objects>
+</document>

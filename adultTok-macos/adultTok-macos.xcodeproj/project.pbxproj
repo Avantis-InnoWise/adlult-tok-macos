@@ -10,6 +10,13 @@
 		046102BC2758CC8100B4D0C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102BB2758CC8100B4D0C8 /* AppDelegate.swift */; };
 		046102BE2758CC8200B4D0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046102BD2758CC8200B4D0C8 /* Assets.xcassets */; };
 		046102C12758CC8200B4D0C8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046102BF2758CC8200B4D0C8 /* MainMenu.xib */; };
+		046102CE2758CDC600B4D0C8 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102CC2758CDC600B4D0C8 /* MainScreenController.swift */; };
+		046102CF2758CDC600B4D0C8 /* MainScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046102CD2758CDC600B4D0C8 /* MainScreenController.xib */; };
+		046102D22758D29600B4D0C8 /* AppPersistentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102D12758D29600B4D0C8 /* AppPersistentVariables.swift */; };
+		046102D62758D47B00B4D0C8 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102D52758D47B00B4D0C8 /* RootRouter.swift */; };
+		046102D92758D49E00B4D0C8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102D82758D49E00B4D0C8 /* Router.swift */; };
+		046102DC2758D58D00B4D0C8 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102DB2758D58D00B4D0C8 /* NavigationController.swift */; };
+		046102DF2758D9B100B4D0C8 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102DE2758D9B100B4D0C8 /* NibLoadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +25,13 @@
 		046102BD2758CC8200B4D0C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		046102C02758CC8200B4D0C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		046102C22758CC8200B4D0C8 /* adultTok_macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = adultTok_macos.entitlements; sourceTree = "<group>"; };
+		046102CC2758CDC600B4D0C8 /* MainScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenController.swift; sourceTree = "<group>"; };
+		046102CD2758CDC600B4D0C8 /* MainScreenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenController.xib; sourceTree = "<group>"; };
+		046102D12758D29600B4D0C8 /* AppPersistentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPersistentVariables.swift; sourceTree = "<group>"; };
+		046102D52758D47B00B4D0C8 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		046102D82758D49E00B4D0C8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		046102DB2758D58D00B4D0C8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		046102DE2758D9B100B4D0C8 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +64,83 @@
 		046102BA2758CC8100B4D0C8 /* adultTok-macos */ = {
 			isa = PBXGroup;
 			children = (
-				046102BB2758CC8100B4D0C8 /* AppDelegate.swift */,
-				046102BD2758CC8200B4D0C8 /* Assets.xcassets */,
-				046102BF2758CC8200B4D0C8 /* MainMenu.xib */,
 				046102C22758CC8200B4D0C8 /* adultTok_macos.entitlements */,
+				046102D02758D28000B4D0C8 /* Utils */,
+				046102C82758CD1A00B4D0C8 /* BaseObjects */,
+				046102C92758CD3300B4D0C8 /* MainScreenModule */,
+				046102CA2758CD3C00B4D0C8 /* SupportingFiles */,
+				046102CB2758CD4800B4D0C8 /* Resources */,
+				046102DD2758D9AA00B4D0C8 /* Extensions */,
 			);
 			path = "adultTok-macos";
+			sourceTree = "<group>";
+		};
+		046102C82758CD1A00B4D0C8 /* BaseObjects */ = {
+			isa = PBXGroup;
+			children = (
+				046102DA2758D58300B4D0C8 /* BaseClasses */,
+				046102D72758D49500B4D0C8 /* BaseProtocols */,
+				046102D52758D47B00B4D0C8 /* RootRouter.swift */,
+			);
+			path = BaseObjects;
+			sourceTree = "<group>";
+		};
+		046102C92758CD3300B4D0C8 /* MainScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				046102CC2758CDC600B4D0C8 /* MainScreenController.swift */,
+				046102CD2758CDC600B4D0C8 /* MainScreenController.xib */,
+			);
+			path = MainScreenModule;
+			sourceTree = "<group>";
+		};
+		046102CA2758CD3C00B4D0C8 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				046102BF2758CC8200B4D0C8 /* MainMenu.xib */,
+				046102BB2758CC8100B4D0C8 /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		046102CB2758CD4800B4D0C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				046102BD2758CC8200B4D0C8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		046102D02758D28000B4D0C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				046102D12758D29600B4D0C8 /* AppPersistentVariables.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		046102D72758D49500B4D0C8 /* BaseProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				046102D82758D49E00B4D0C8 /* Router.swift */,
+			);
+			path = BaseProtocols;
+			sourceTree = "<group>";
+		};
+		046102DA2758D58300B4D0C8 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				046102DB2758D58D00B4D0C8 /* NavigationController.swift */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		046102DD2758D9AA00B4D0C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				046102DE2758D9B100B4D0C8 /* NibLoadable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046102CF2758CDC600B4D0C8 /* MainScreenController.xib in Resources */,
 				046102BE2758CC8200B4D0C8 /* Assets.xcassets in Resources */,
 				046102C12758CC8200B4D0C8 /* MainMenu.xib in Resources */,
 			);
@@ -128,7 +214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046102D62758D47B00B4D0C8 /* RootRouter.swift in Sources */,
+				046102DC2758D58D00B4D0C8 /* NavigationController.swift in Sources */,
+				046102DF2758D9B100B4D0C8 /* NibLoadable.swift in Sources */,
+				046102CE2758CDC600B4D0C8 /* MainScreenController.swift in Sources */,
+				046102D92758D49E00B4D0C8 /* Router.swift in Sources */,
 				046102BC2758CC8100B4D0C8 /* AppDelegate.swift in Sources */,
+				046102D22758D29600B4D0C8 /* AppPersistentVariables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
