@@ -1,0 +1,6 @@
+framework module Pods_adultTok_macos {
+  umbrella header "Pods-adultTok-macos-umbrella.h"
+
+  export *
+  module * { export * }
+}

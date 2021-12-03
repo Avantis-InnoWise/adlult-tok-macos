@@ -21,21 +21,22 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILd-l3-91g">
-                    <rect key="frame" x="0.0" y="0.0" width="836" height="544"/>
+                    <rect key="frame" x="0.0" y="0.0" width="836" height="574"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
                 <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="oMx-7p-cFZ">
-                    <rect key="frame" x="0.0" y="544" width="836" height="100"/>
+                    <rect key="frame" x="0.0" y="574" width="836" height="70"/>
                     <view key="contentView" id="I6v-en-2ZI">
-                        <rect key="frame" x="1" y="1" width="834" height="98"/>
+                        <rect key="frame" x="1" y="1" width="834" height="68"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="qDV-X5-kyF"/>
+                        <constraint firstAttribute="height" constant="70" id="qDV-X5-kyF"/>
                     </constraints>
+                    <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                 </box>
             </subviews>
             <constraints>
