@@ -23,7 +23,6 @@ final class MainScreenController: NSViewController {
         super.viewDidLoad()
 
         webView.navigationDelegate = self
-        webView.uiDelegate = self
         configureView()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if let url = AppPersistentVariables.baseUrl {
@@ -37,6 +36,7 @@ final class MainScreenController: NSViewController {
         boxView.cornerRadius = 0
 
         let backButton = NSButton()
+        backButton.setAccessibilityIdentifier("back_button")
         backButton.bezelStyle = .rounded
         backButton.bezelColor = Constants.pinkColor
         backButton.alignment = .center
@@ -52,6 +52,7 @@ final class MainScreenController: NSViewController {
         }
 
         let forwardButton = NSButton()
+        forwardButton.setAccessibilityIdentifier("forward_button")
         forwardButton.bezelStyle = .rounded
         forwardButton.bezelColor = Constants.pinkColor
         forwardButton.alignment = .center
@@ -67,6 +68,7 @@ final class MainScreenController: NSViewController {
         }
 
         let homeButton = NSButton()
+        homeButton.setAccessibilityIdentifier("home_button")
         homeButton.bezelStyle = .rounded
         homeButton.bezelColor = Constants.pinkColor
         homeButton.alignment = .center
@@ -80,25 +82,72 @@ final class MainScreenController: NSViewController {
             $0.top.equalTo(self.boxView.snp.top).inset(Constants.backForwardInsets.top)
             $0.bottom.equalTo(self.boxView.snp.bottom).inset(Constants.backForwardInsets.bottom)
         }
+
+        if webView.backForwardList.backList.isEmpty {
+            backButton.isEnabled = false
+        }
+        if webView.backForwardList.forwardList.isEmpty {
+            forwardButton.isEnabled = false
+        }
     }
 
     @objc private func backPressed() {
-        debugPrint("back")
+        guard
+            let backButton = self.boxView.subviews.last?.subviews.first(where: { $0.accessibilityIdentifier() == "back_button" })
+        else { return }
+        if (backButton as? NSButton)?.isEnabled == true {
+            webView.goBack()
+        }
     }
 
     @objc private func forwardPressed() {
-        debugPrint("forward")
+        guard
+            let forwardButton = self.boxView.subviews.last?.subviews.first(where: { $0.accessibilityIdentifier() == "forward_button" })
+        else { return }
+        if (forwardButton as? NSButton)?.isEnabled == true {
+            webView.goForward()
+        }
     }
 
     @objc private func homePressed() {
-        debugPrint("home")
+        if let url = AppPersistentVariables.baseUrl {
+            self.webView.load(URLRequest(url: url))
+        }
     }
 }
 
 extension MainScreenController: WKNavigationDelegate {
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationAction: WKNavigationAction,
+        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+    ) {
+        if let host = navigationAction.request.url?.host {
+            if host.contains("wellhello.com") {
+                decisionHandler(.allow)
+                return
+            }
+        }
 
-}
+        decisionHandler(.cancel)
+    }
 
-extension MainScreenController: WKUIDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        guard
+            let backButton = self.boxView.subviews.last?.subviews.first(where: { $0.accessibilityIdentifier() == "back_button" }),
+            let forwardButton = self.boxView.subviews.last?.subviews.first(where: { $0.accessibilityIdentifier() == "forward_button" })
+        else { return }
 
+        if webView.backForwardList.backList.isEmpty {
+            (backButton as? NSButton)?.isEnabled = false
+        } else {
+            (backButton as? NSButton)?.isEnabled = true
+        }
+
+        if webView.backForwardList.forwardList.isEmpty {
+            (forwardButton as? NSButton)?.isEnabled = false
+        }  else {
+            (forwardButton as? NSButton)?.isEnabled = true
+        }
+    }
 }
