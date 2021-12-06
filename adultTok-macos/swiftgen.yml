@@ -1,0 +1,5 @@
+strings:
+  inputs: adultTok-macos/Services/LocalizationService/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: adultTok-macos/Services/LocalizationService/Localized.swift

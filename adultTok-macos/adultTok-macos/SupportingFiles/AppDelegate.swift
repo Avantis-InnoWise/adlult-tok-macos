@@ -19,7 +19,7 @@ class AppDelegate: NSObject,
                                backing: .buffered,
                                defer: false)
         self.rootRouter = RootRouter()
-        window.title = "AdultTok"
+        window.title = L10n.appTitle.localize()
         window?.contentViewController = rootRouter?.rootViewController
         self.window?.makeKeyAndOrderFront(nil)
     }

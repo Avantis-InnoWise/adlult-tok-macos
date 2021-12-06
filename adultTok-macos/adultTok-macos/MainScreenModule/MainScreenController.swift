@@ -36,58 +36,61 @@ final class MainScreenController: NSViewController {
         boxView.cornerRadius = 0
 
         let backButton = NSButton()
+        backButton.makeAdultButton(with: Constants.pinkColor, radius: Constants.cornerRadius)
         backButton.setAccessibilityIdentifier("back_button")
-        backButton.bezelStyle = .rounded
-        backButton.bezelColor = Constants.pinkColor
-        backButton.alignment = .center
-        backButton.layer?.cornerRadius = Constants.cornerRadius
-        backButton.title = "Back"
+        backButton.title = L10n.backTitle.localize()
         backButton.action = #selector(backPressed)
-        self.boxView.addSubview(backButton)
-        backButton.snp.makeConstraints {
-            $0.width.equalTo(80)
-            $0.top.equalTo(self.boxView.snp.top).inset(Constants.backForwardInsets.top)
-            $0.left.equalTo(self.boxView.snp.left).inset(Constants.backForwardInsets.left)
-            $0.bottom.equalTo(self.boxView.snp.bottom).inset(Constants.backForwardInsets.bottom)
-        }
 
         let forwardButton = NSButton()
+        forwardButton.makeAdultButton(with: Constants.pinkColor, radius: Constants.cornerRadius)
         forwardButton.setAccessibilityIdentifier("forward_button")
-        forwardButton.bezelStyle = .rounded
-        forwardButton.bezelColor = Constants.pinkColor
-        forwardButton.alignment = .center
-        forwardButton.layer?.cornerRadius = Constants.cornerRadius
-        forwardButton.title = "Forward"
+        forwardButton.title = L10n.fwTitle.localize()
         forwardButton.action = #selector(forwardPressed)
-        self.boxView.addSubview(forwardButton)
-        forwardButton.snp.makeConstraints {
-            $0.width.equalTo(80)
-            $0.top.equalTo(self.boxView.snp.top).inset(Constants.backForwardInsets.top)
-            $0.right.equalTo(self.boxView.snp.right).inset(Constants.backForwardInsets.right)
-            $0.bottom.equalTo(self.boxView.snp.bottom).inset(Constants.backForwardInsets.bottom)
-        }
 
         let homeButton = NSButton()
+        homeButton.makeAdultButton(with: Constants.pinkColor, radius: Constants.cornerRadius)
         homeButton.setAccessibilityIdentifier("home_button")
-        homeButton.bezelStyle = .rounded
-        homeButton.bezelColor = Constants.pinkColor
-        homeButton.alignment = .center
-        homeButton.layer?.cornerRadius = Constants.cornerRadius
-        homeButton.title = "Homepage"
+        homeButton.title = L10n.homeTitle.localize()
         homeButton.action = #selector(homePressed)
-        self.boxView.addSubview(homeButton)
-        homeButton.snp.makeConstraints {
-            $0.width.equalTo(120)
-            $0.centerX.equalTo(self.boxView.snp.centerX)
-            $0.top.equalTo(self.boxView.snp.top).inset(Constants.backForwardInsets.top)
-            $0.bottom.equalTo(self.boxView.snp.bottom).inset(Constants.backForwardInsets.bottom)
-        }
+
+        self.setupConstraints(with: backButton, homeButton, forwardButton)
 
         if webView.backForwardList.backList.isEmpty {
             backButton.isEnabled = false
         }
         if webView.backForwardList.forwardList.isEmpty {
             forwardButton.isEnabled = false
+        }
+    }
+
+    private func setupConstraints(with buttons: NSButton...) {
+        buttons.forEach { button in
+            self.boxView.addSubview(button)
+            switch button.accessibilityIdentifier() {
+            case "home_button":
+                button.snp.makeConstraints {
+                    $0.width.equalTo(120)
+                    $0.centerX.equalTo(self.boxView.snp.centerX)
+                    $0.top.equalTo(self.boxView.snp.top).inset(Constants.backForwardInsets.top)
+                    $0.bottom.equalTo(self.boxView.snp.bottom).inset(Constants.backForwardInsets.bottom)
+                }
+            case "forward_button":
+                button.snp.makeConstraints {
+                    $0.width.equalTo(80)
+                    $0.top.equalTo(self.boxView.snp.top).inset(Constants.backForwardInsets.top)
+                    $0.right.equalTo(self.boxView.snp.right).inset(Constants.backForwardInsets.right)
+                    $0.bottom.equalTo(self.boxView.snp.bottom).inset(Constants.backForwardInsets.bottom)
+                }
+            case "back_button":
+                button.snp.makeConstraints {
+                    $0.width.equalTo(80)
+                    $0.top.equalTo(self.boxView.snp.top).inset(Constants.backForwardInsets.top)
+                    $0.left.equalTo(self.boxView.snp.left).inset(Constants.backForwardInsets.left)
+                    $0.bottom.equalTo(self.boxView.snp.bottom).inset(Constants.backForwardInsets.bottom)
+                }
+            default:
+                break
+            }
         }
     }
 

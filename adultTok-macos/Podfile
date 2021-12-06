@@ -7,4 +7,5 @@ target 'adultTok-macos' do
 
   # Pods for adultTok-macos
     pod 'SnapKit' 
+    pod 'SwiftGen'
 end

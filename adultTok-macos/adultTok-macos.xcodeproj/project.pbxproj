@@ -14,7 +14,11 @@
 		046102CF2758CDC600B4D0C8 /* MainScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046102CD2758CDC600B4D0C8 /* MainScreenController.xib */; };
 		046102D22758D29600B4D0C8 /* AppPersistentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102D12758D29600B4D0C8 /* AppPersistentVariables.swift */; };
 		046102D62758D47B00B4D0C8 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102D52758D47B00B4D0C8 /* RootRouter.swift */; };
-		046102DF2758D9B100B4D0C8 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102DE2758D9B100B4D0C8 /* NibLoadable.swift */; };
+		046102DF2758D9B100B4D0C8 /* NibLoadable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046102DE2758D9B100B4D0C8 /* NibLoadable+Extension.swift */; };
+		04F63F3F275E448800CC5D66 /* NSButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F63F3E275E448800CC5D66 /* NSButton+Extension.swift */; };
+		04F63F44275E47D700CC5D66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F63F46275E47D700CC5D66 /* Localizable.strings */; };
+		04F63F49275E4B1200CC5D66 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F63F48275E4B1200CC5D66 /* LocalizationService.swift */; };
+		04F63F4D275E4C8E00CC5D66 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F63F4C275E4C8E00CC5D66 /* Localized.swift */; };
 		D1BAF686E9C9AD6D2DFD8CF2 /* Pods_adultTok_macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F31B35E4C03E551252B78CB /* Pods_adultTok_macos.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +32,12 @@
 		046102CD2758CDC600B4D0C8 /* MainScreenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenController.xib; sourceTree = "<group>"; };
 		046102D12758D29600B4D0C8 /* AppPersistentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPersistentVariables.swift; sourceTree = "<group>"; };
 		046102D52758D47B00B4D0C8 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
-		046102DE2758D9B100B4D0C8 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		046102DE2758D9B100B4D0C8 /* NibLoadable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NibLoadable+Extension.swift"; sourceTree = "<group>"; };
 		046102E02758FB9C00B4D0C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		04F63F3E275E448800CC5D66 /* NSButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Extension.swift"; sourceTree = "<group>"; };
+		04F63F45275E47D700CC5D66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04F63F48275E4B1200CC5D66 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
+		04F63F4C275E4C8E00CC5D66 /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		63CE145182B0CB1DA6CAC2A4 /* Pods-adultTok-macos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adultTok-macos.debug.xcconfig"; path = "Target Support Files/Pods-adultTok-macos/Pods-adultTok-macos.debug.xcconfig"; sourceTree = "<group>"; };
 		6F31B35E4C03E551252B78CB /* Pods_adultTok_macos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_adultTok_macos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED44192BD2DE9F48BF4DDD95 /* Pods-adultTok-macos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adultTok-macos.release.xcconfig"; path = "Target Support Files/Pods-adultTok-macos/Pods-adultTok-macos.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +82,7 @@
 				046102C82758CD1A00B4D0C8 /* BaseObjects */,
 				046102C92758CD3300B4D0C8 /* MainScreenModule */,
 				046102CA2758CD3C00B4D0C8 /* SupportingFiles */,
+				04F63F4A275E4BD000CC5D66 /* Services */,
 				046102CB2758CD4800B4D0C8 /* Resources */,
 				046102DD2758D9AA00B4D0C8 /* Extensions */,
 			);
@@ -125,9 +134,28 @@
 		046102DD2758D9AA00B4D0C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				046102DE2758D9B100B4D0C8 /* NibLoadable.swift */,
+				046102DE2758D9B100B4D0C8 /* NibLoadable+Extension.swift */,
+				04F63F3E275E448800CC5D66 /* NSButton+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04F63F4A275E4BD000CC5D66 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04F63F4B275E4C6000CC5D66 /* LocalizationService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		04F63F4B275E4C6000CC5D66 /* LocalizationService */ = {
+			isa = PBXGroup;
+			children = (
+				04F63F4C275E4C8E00CC5D66 /* Localized.swift */,
+				04F63F48275E4B1200CC5D66 /* LocalizationService.swift */,
+				04F63F46275E47D700CC5D66 /* Localizable.strings */,
+			);
+			path = LocalizationService;
 			sourceTree = "<group>";
 		};
 		DAD9C1D9C480FB376E8E9C3E /* Pods */ = {
@@ -158,6 +186,7 @@
 				046102B42758CC8100B4D0C8 /* Sources */,
 				046102B52758CC8100B4D0C8 /* Frameworks */,
 				046102B62758CC8100B4D0C8 /* Resources */,
+				04F63F47275E4ADF00CC5D66 /* SwiftGen */,
 				D94E58C3CAF3E7A42AD64195 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -208,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046102CF2758CDC600B4D0C8 /* MainScreenController.xib in Resources */,
+				04F63F44275E47D700CC5D66 /* Localizable.strings in Resources */,
 				046102BE2758CC8200B4D0C8 /* Assets.xcassets in Resources */,
 				046102C12758CC8200B4D0C8 /* MainMenu.xib in Resources */,
 			);
@@ -216,6 +246,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04F63F47275E4ADF00CC5D66 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftGen/bin/swiftgen\n";
+		};
 		6E6AB0DF01312E0F3CB87EF3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,10 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F63F49275E4B1200CC5D66 /* LocalizationService.swift in Sources */,
+				04F63F4D275E4C8E00CC5D66 /* Localized.swift in Sources */,
 				046102D62758D47B00B4D0C8 /* RootRouter.swift in Sources */,
-				046102DF2758D9B100B4D0C8 /* NibLoadable.swift in Sources */,
+				046102DF2758D9B100B4D0C8 /* NibLoadable+Extension.swift in Sources */,
 				046102CE2758CDC600B4D0C8 /* MainScreenController.swift in Sources */,
 				046102BC2758CC8100B4D0C8 /* AppDelegate.swift in Sources */,
+				04F63F3F275E448800CC5D66 /* NSButton+Extension.swift in Sources */,
 				046102D22758D29600B4D0C8 /* AppPersistentVariables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +330,14 @@
 				046102C02758CC8200B4D0C8 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		04F63F46275E47D700CC5D66 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F63F45275E47D700CC5D66 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
