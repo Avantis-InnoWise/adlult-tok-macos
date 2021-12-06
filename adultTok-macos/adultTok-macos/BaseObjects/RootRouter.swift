@@ -7,6 +7,10 @@
 
 import Cocoa
 
+public protocol Router {
+    var controlledViewController: NSViewController? { get }
+}
+
 public final class RootRouter: Router {
     public var controlledViewController: NSViewController? {
         return rootViewController
