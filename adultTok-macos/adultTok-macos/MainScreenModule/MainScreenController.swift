@@ -23,6 +23,7 @@ final class MainScreenController: NSViewController {
         super.viewDidLoad()
 
         webView.navigationDelegate = self
+        webView.uiDelegate = self
         configureView()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if let url = AppPersistentVariables.baseUrl {
@@ -152,5 +153,23 @@ extension MainScreenController: WKNavigationDelegate {
         }  else {
             (forwardButton as? NSButton)?.isEnabled = true
         }
+    }
+}
+
+extension MainScreenController: WKUIDelegate {
+    func webView(
+        _ webView: WKWebView,
+        createWebViewWith configuration: WKWebViewConfiguration,
+        for navigationAction: WKNavigationAction,
+        windowFeatures: WKWindowFeatures
+    ) -> WKWebView? {
+        if navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame == false {
+            if let urlToLoad = navigationAction.request.url {
+                if urlToLoad.absoluteString.contains("wellhello.com") {
+                    self.webView.load(URLRequest(url: urlToLoad))
+                }
+            }
+        }
+        return nil
     }
 }
