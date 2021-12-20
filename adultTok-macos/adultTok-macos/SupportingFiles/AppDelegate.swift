@@ -19,12 +19,13 @@ class AppDelegate: NSObject,
                                backing: .buffered,
                                defer: false)
         self.rootRouter = RootRouter()
-        self.window.title = L10n.appTitle.localize()
-        self.window.contentViewController = rootRouter?.rootViewController
+        self.window?.title = L10n.appTitle.localize()
+        self.window?.contentViewController = rootRouter?.rootViewController
         self.window?.makeKeyAndOrderFront(nil)
     }
 
-    func applicationWillTerminate(_ notification: Notification) {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
     }
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
